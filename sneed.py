@@ -33,7 +33,7 @@ option = int(input("Select an option: "))
 
 while option != 0:
   if option == 1:
-    print("Extracs, creates or converts a video. Follow instructions. Leave field blank to choose the default option.")
+    print("Extracts, creates or converts a video. Follow instructions. Leave field blank to choose the default option.")
     filename = input("Filename must include extension e.g. video.mp4 \n Enter the filename: ")
     start = input("Enter the start time (hh:mm:ss): ")
     end = input("Enter the end time (hh:mm:ss): ")
