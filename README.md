@@ -60,3 +60,59 @@ Creates a .gif with reasonable quality and filesize.
 Quits out of the program.
 
 
+**FFMPEG Commands**
+
+Here are the ffmpeg commands used in this program. Use them to create your own or modify them to modify the program.
+
+**Video**
+
+Code:
+
+```ffmpeg -i {filename} -ss {start} -to {end} {resolution} {codec} {bitrate} {audio} {output}```
+
+Example:
+ 
+```ffmpeg -i input.mkv -ss 00:00:00 -to 00:00:10 -vf scale=1280:720 -vcodec libx264 -b:v = 0.5M -an output.mp4```
+
+Creates a H264 .mp4 with a duration of 10 second starting from 00:00:00 with a resolution of 720p and a bitrate of 0.5M.
+
+**Webm**
+
+Code:
+
+```ffmpeg -ss {start} -to {end} -i {filename} -fs 4M -vcodec libvpx -b:v {bitrate} {audio} {output}.webm```
+
+Example:
+
+```ffmpeg -ss 00:00:00 -to 00:00:10 -i input.mkv -fs 4M -vcodec libvpx -b:v 1M -an output.webm```
+
+Creates a VP8 .webm with a duration of 10 seconds starting from 00:00:00 using the resolution of the input file with a maximum filesize of 4MB, bitrate of 1M and without sound (-an flag).
+
+**Hardcoded Subtitles**
+
+Code:
+
+```ffmpeg -ss {start} -copyts -i {filename} -vf subtitles={filename}:si={stream} -ss {start} -to {end} {resolution} {codec} {bitrate} {audio} {output}```
+
+Example:
+
+```ffmpeg -ss 00:00:00 -copyts -i input.mkv -vf subtitles=input.mkv:si=1 -ss 00:00:00 -to 00:00:10 -vf scale=1280:720 -vcodec libvpx -0.5M -an output.webm```
+
+Creates a VP8 .webm with a duration of 10 seconds with hardcoded subtitles from subtitle stream 1 starting from 00:00:00 with a resolution of 720P and a bitrate of 0.5M and no sound.
+
+**Gifs**
+
+Code:
+
+```ffmpeg -ss {start} -to {end} -i {filename} -filter_complex \"[0:v] fps=12,scale=480:-1,split [a][b];[a] palettegen [p];[b][p] paletteuse\" {gifname}.gif```
+
+Example:
+
+```ffmpeg -ss 00:00:00 -to 00:00:5 -i input.mp4 -filter_complex \"[0:v] fps=12,scale=480:-1,split [a][b];[a] palettegen [p];[b][p] paletteuse\" output.gif```
+
+Creates a .gif with a duration of 5 seconds from input.mp4 starting from 00:00:00.
+
+
+
+
+
