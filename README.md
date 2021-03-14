@@ -21,7 +21,7 @@ Can be used to create or extract videos out of an input files in various formats
 
 **Option 2: 4Chan Webm**
 
-Automatically selects the VP8 codec as required by 4Chan. Limits the filesize to a maximum of 4 MB - this means it will stop encoding once the filesize limit is reached ignoring the durationg. Lower the bitrate or duration to stay under the FS limit.
+Automatically selects the VP8 codec as required by 4Chan. Limits the filesize to a maximum of 4 MB - this means it will stop encoding once the filesize limit is reached ignoring the duration. Lower the bitrate or duration to stay under the FS limit.
 
 * Input file name must include extension e.g. input.mp4, input.mkv. 
 * Specify a start and end time by using the (hh:mm:ss) format, e.g. (00:01:32) for 1 minute 32 seconds.
