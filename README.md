@@ -2,8 +2,8 @@
 A simple tool that lets you create a video, webm or gif from any video file.
 
 **Requirements**
-python3
-ffmpeg 4.3.2 (with --enable-libass, --enable-libdav1d, libavcodec, libavformat)
+* python3
+* ffmpeg 4.3.2 (with --enable-libass, --enable-libdav1d, libavcodec, libavformat)
 
 **How To Use**
 
