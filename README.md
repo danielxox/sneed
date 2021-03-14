@@ -96,7 +96,7 @@ Code:
 
 Example:
 
-```ffmpeg -ss 00:00:00 -copyts -i input.mkv -vf subtitles=input.mkv:si=1 -ss 00:00:00 -to 00:00:10 -vf scale=1280:720 -vcodec libvpx -0.5M -an output.webm```
+```ffmpeg -ss 00:00:00 -copyts -i input.mkv -vf subtitles=input.mkv:si=1 -ss 00:00:00 -to 00:00:10 -vf scale=1280:720 -vcodec libvpx -b:v 0.5M -an output.webm```
 
 Creates a VP8 .webm with a duration of 10 seconds with hardcoded subtitles from subtitle stream 1 starting from 00:00:00 with a resolution of 720P and a bitrate of 0.5M and no sound.
 
